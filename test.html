@@ -1,0 +1,19 @@
+<html>
+  <head>
+	<title>Test</title>
+	<script src="http://cdn.craig.is/js/mousetrap/mousetrap.min.js"></script>	
+  </head>
+	<script>
+		Mousetrap.bind(['d','right'], function() {
+			alert("next");
+		});
+		Mousetrap.bind(['a','left'], function() {
+			alert("previous");
+		});
+	</script>
+  <body>
+	<iframe  id="embededSite" src="http://pittsburgh.craigslist.org" width="100%" height="100%" >
+    	<p>Your browser does not support iframes.</p>
+	</iframe>
+	</body>
+</html>

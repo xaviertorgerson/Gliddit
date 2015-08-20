@@ -79,17 +79,13 @@
 		function loadMore(site)
 		{	
 			
-			$.getJSON(
-				site,
-				function PopulateArray(data)
-				{
+			$.getJSON(site, function PopulateArray(data) {
 					//alert("Populating Array");
 					nextLink = MakeLink(subReddit,data.data.after,(25));
 					//alert(nextLink);
 					//alert(nextLink);
-					$.each(
-            			data.data.children.slice(0, 25),
-            			function (i, post) {
+					$.each(data.data.children.slice(0, 25), function (i, post) {
+						
 							if(!post.data.is_self)
 							{
 								if(post.data.domain == 'youtube.com')
@@ -104,13 +100,11 @@
 									linkArray.push(post.data.url);
 								}
 							}
-						            			}
-          			)
+					});
 					
 					processing = 0;
 					Next();
-        		}
-			)
+        	});
 			//.success(function() { alert("second success"); })
 			.error(function() { alert("error");})
 			//.complete(function() { alert("complete"); });
